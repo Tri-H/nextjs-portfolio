@@ -1,0 +1,11 @@
+[
+	{
+		"id": 1,
+		"title": "Netstream",
+		"description": "Netstream is a simple UI/UX case study for web streaming.",
+		"image": "netstream.png",
+		"url": "",
+		"repository": "https://github.com/Tri-H/netstream",
+		"technologies": ["Vue.js", "Tailwind CSS"]
+	}
+]

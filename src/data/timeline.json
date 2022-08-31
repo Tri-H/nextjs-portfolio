@@ -1,0 +1,24 @@
+[
+	{
+		"id": 1,
+		"title": "Freelance Junior Front-End Web Developer",
+		"description": "After graduating from high school, I was in a dilemma about what to do. I learned several things, one of which is web programming. In the middle of 2022, I decided to focus on Front-End Web Developer and become a Freelancer.",
+		"datetime": {
+			"start": "June, 2022",
+			"end": "Present"
+		},
+		"location": "Home Basement",
+		"logo": ""
+	},
+	{
+		"id": 2,
+		"title": "High School Student",
+		"description": "In high school as a social science student, I started learning about basic programming and graphic design.",
+		"datetime": {
+			"start": "June, 2017",
+			"end": "May, 2020"
+		},
+		"location": "SMAN 1 Leuwimunding",
+		"logo": ""
+	}
+]
