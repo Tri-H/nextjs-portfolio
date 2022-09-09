@@ -3,73 +3,73 @@
 @tailwind utilities;
 
 @layer base {
-	html {
-		scroll-behavior: smooth;
-	}
-	body {
-		@apply font-sans;
-		@apply bg-white transition-colors;
-		@apply dark:bg-dark dark:text-white;
-	}
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans;
+    @apply bg-white transition-colors;
+    @apply dark:bg-dark dark:text-white;
+  }
 
-	h1 {
-		@apply text-2xl font-bold md:text-3xl;
-	}
-	h2 {
-		@apply text-xl font-bold md:text-2xl;
-	}
-	h3 {
-		@apply text-lg font-bold md:text-xl;
-	}
-	h4 {
-		@apply text-base font-bold md:text-lg;
-	}
+  h1 {
+    @apply text-2xl font-bold md:text-3xl;
+  }
+  h2 {
+    @apply text-xl font-bold md:text-2xl;
+  }
+  h3 {
+    @apply text-lg font-bold md:text-xl;
+  }
+  h4 {
+    @apply text-base font-bold md:text-lg;
+  }
 
-	p {
-		@apply text-sm dark:text-zinc-400 md:text-base;
-	}
+  p {
+    @apply text-sm dark:text-zinc-400 md:text-base;
+  }
 
-	time {
-		@apply inline-block text-xs md:text-sm;
-	}
+  time {
+    @apply inline-block text-xs md:text-sm;
+  }
 }
 
 @layer components {
-	/* Container */
-	.container {
-		@apply mx-auto px-6 lg:max-w-5xl xl:max-w-5xl;
-	}
+  /* Container */
+  .container {
+    @apply mx-auto px-6 lg:max-w-5xl xl:max-w-5xl;
+  }
 
-	/* Accent */
-	.accent {
-		@apply bg-gradient-to-r from-sky-400 to-cyan-400 bg-clip-text text-transparent;
-	}
+  /* Accent */
+  .accent {
+    @apply bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent;
+  }
 
-	/* Button */
-	.button {
-		@apply py-2 px-3 font-medium;
+  /* Button */
+  .button {
+    @apply py-2 px-3 font-medium;
 
-		&--primary {
-			@apply border border-black bg-black text-white transition-colors duration-500;
-			@apply hover:bg-transparent hover:text-black;
-			@apply dark:border-white dark:bg-white dark:text-black dark:hover:bg-transparent dark:hover:text-white;
-		}
-	}
+    &--primary {
+      @apply border border-black bg-black text-white transition-colors duration-500;
+      @apply hover:bg-transparent hover:text-black;
+      @apply dark:border-white dark:bg-white dark:text-black dark:hover:bg-transparent dark:hover:text-white;
+    }
+  }
 
-	.menu-toggle {
-		@apply flex flex-col gap-2 py-2;
-		@apply before:origin-top-left;
-		@apply after:origin-bottom-left;
+  .menu-toggle {
+    @apply flex flex-col gap-2 py-2;
+    @apply before:origin-top-left;
+    @apply after:origin-bottom-left;
 
-		&::before,
-		&::after {
-			@apply block h-[1px] w-6 bg-black transition duration-300 ease-in-out content-[''];
-			@apply dark:bg-white;
-		}
+    &::before,
+    &::after {
+      @apply block h-[1px] w-6 bg-black transition duration-300 ease-in-out content-[''];
+      @apply dark:bg-white;
+    }
 
-		.active > & {
-			@apply before:-translate-y-1 before:translate-x-1 before:rotate-45;
-			@apply after:translate-y-1 after:translate-x-1 after:-rotate-45;
-		}
-	}
+    .active > & {
+      @apply before:-translate-y-1 before:translate-x-1 before:rotate-45;
+      @apply after:translate-y-1 after:translate-x-1 after:-rotate-45;
+    }
+  }
 }

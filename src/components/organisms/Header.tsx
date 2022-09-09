@@ -1,30 +1,30 @@
-import { useState } from 'react'
-import { IconLogo } from '../atoms/icons'
-import { ButtonLink } from '../atoms'
-import { Nav, ThemeButton } from '../molecules'
+import { useState } from "react";
+import { IconLogo } from "../atoms/icons";
+import { ButtonLink } from "../atoms";
+import { Nav, ThemeButton } from "../molecules";
 
 export default function Header() {
-	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
-	return (
-		<header className="sticky top-0 z-50 w-full bg-white/10 py-4 backdrop-blur-sm dark:bg-dark/10">
-			<div className="container flex items-center justify-between">
-				<div className="inline-flex md:w-4/12">
-					<ButtonLink href="/">
-						<IconLogo size="2.5rem" />
-					</ButtonLink>
-				</div>
-				<Nav isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-				<div className="flex md:w-4/12 md:justify-end">
-					<button
-						className={`md:hidden ${isMenuOpen ? 'active' : ''}`}
-						onClick={() => setIsMenuOpen(!isMenuOpen)}
-					>
-						<div className="menu-toggle"></div>
-					</button>
-					<ThemeButton className="hidden py-3 md:block" />
-				</div>
-			</div>
-		</header>
-	)
+  return (
+    <header className="sticky top-0 z-50 w-full bg-white/5 py-4 backdrop-blur-sm dark:bg-dark/5">
+      <div className="container flex items-center justify-between">
+        <div className="inline-flex md:w-4/12">
+          <ButtonLink href="/">
+            <IconLogo size="2.5rem" />
+          </ButtonLink>
+        </div>
+        <Nav isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+        <div className="flex md:w-4/12 md:justify-end">
+          <button
+            className={`md:hidden ${isMenuOpen ? "active" : ""}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <div className="menu-toggle"></div>
+          </button>
+          <ThemeButton className="hidden py-3 md:block" />
+        </div>
+      </div>
+    </header>
+  );
 }
