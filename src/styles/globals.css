@@ -58,8 +58,6 @@
 
   .menu-toggle {
     @apply flex flex-col gap-2 py-2;
-    @apply before:origin-top-left;
-    @apply after:origin-bottom-left;
 
     &::before,
     &::after {
@@ -68,8 +66,8 @@
     }
 
     .active > & {
-      @apply before:-translate-y-1 before:translate-x-1 before:rotate-45;
-      @apply after:translate-y-1 after:translate-x-1 after:-rotate-45;
+      @apply before:translate-y-1 before:rotate-45;
+      @apply after:-translate-y-1 after:-rotate-45;
     }
   }
 }
