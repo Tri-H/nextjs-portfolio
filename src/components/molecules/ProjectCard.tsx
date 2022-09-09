@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { NextImage, TechIcon } from "../atoms";
 import { Icon } from "../atoms/icons";
 import type { ProjectType } from "data";
@@ -6,7 +7,7 @@ type ProjectCardProps = {
   project: ProjectType;
 };
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   return (
     <div className="flex h-full w-full flex-col justify-between space-y-4 rounded-lg border bg-white p-4 shadow-lg dark:border-zinc-900 dark:bg-black">
       <a
@@ -33,4 +34,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </div>
     </div>
   );
-}
+};
+
+export default ProjectCard;

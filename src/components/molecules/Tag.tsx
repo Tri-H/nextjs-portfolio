@@ -1,5 +1,6 @@
 import { Button } from "../atoms";
 import type { TagType } from "data";
+import { FC } from "react";
 
 type TagProps = {
   tags: TagType;
@@ -7,7 +8,7 @@ type TagProps = {
   setSelectedTag: (i: string) => void;
 };
 
-export default function Tag({ tags, selectedTag, setSelectedTag }: TagProps) {
+const Tag: FC<TagProps> = ({ tags, selectedTag, setSelectedTag }) => {
   function handleTagClick(tag: string) {
     selectedTag === tag ? setSelectedTag("") : setSelectedTag(tag);
   }
@@ -29,4 +30,6 @@ export default function Tag({ tags, selectedTag, setSelectedTag }: TagProps) {
       ))}
     </div>
   );
-}
+};
+
+export default Tag;

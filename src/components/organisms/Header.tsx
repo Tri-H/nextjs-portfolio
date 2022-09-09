@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { IconLogo } from "../atoms/icons";
 import { ButtonLink } from "../atoms";
 import { Nav, ThemeButton } from "../molecules";
 
-export default function Header() {
+const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
@@ -27,4 +27,6 @@ export default function Header() {
       </div>
     </header>
   );
-}
+};
+
+export default Header;

@@ -1,10 +1,12 @@
-import { ReactNode } from 'react'
+import { FC, ReactNode } from "react";
 
 type AccentProps = {
-	children: ReactNode
-	className?: string
-}
+  children: ReactNode;
+  className?: string;
+};
 
-export default function Accent({ children, className }: AccentProps) {
-	return <span className={`accent font-bold ${className}`}>{children}</span>
-}
+const Accent: FC<AccentProps> = ({ children, className }) => {
+  return <span className={`accent font-bold ${className}`}>{children}</span>;
+};
+
+export default Accent;

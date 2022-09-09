@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Icon } from "../atoms/icons";
 
 type SocialType = {
@@ -9,7 +10,7 @@ type SocialProps = {
   className?: string;
 };
 
-export default function Social({ className }: SocialProps) {
+const Social: FC<SocialProps> = ({ className }) => {
   const socials: SocialType[] = [
     {
       id: "Github",
@@ -45,4 +46,6 @@ export default function Social({ className }: SocialProps) {
       ))}
     </ul>
   );
-}
+};
+
+export default Social;

@@ -1,3 +1,4 @@
+import { FC } from "react";
 import type { TimelineType } from "data";
 import { Accent } from "../atoms";
 
@@ -5,7 +6,7 @@ type TimelineProps = {
   timeline: TimelineType[];
 };
 
-export default function Timeline({ timeline }: TimelineProps) {
+const Timeline: FC<TimelineProps> = ({ timeline }) => {
   return (
     <ul className="pl-4">
       {timeline.map(
@@ -34,4 +35,6 @@ export default function Timeline({ timeline }: TimelineProps) {
       )}
     </ul>
   );
-}
+};
+
+export default Timeline;

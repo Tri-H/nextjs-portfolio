@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { withRouter, NextRouter } from "next/router";
+import { FC } from "react";
 import { Accent } from "../atoms";
 import { ThemeButton } from "../molecules";
 
@@ -14,7 +15,7 @@ type NavProps = {
   setIsMenuOpen: (val: boolean) => void;
 };
 
-function Nav({ router, isMenuOpen, setIsMenuOpen }: NavProps) {
+const Nav: FC<NavProps> = ({ router, isMenuOpen, setIsMenuOpen }) => {
   const links: MenuType[] = [
     { label: "Home", href: "/" },
     { label: "Projects", href: "/projects" },
@@ -51,6 +52,6 @@ function Nav({ router, isMenuOpen, setIsMenuOpen }: NavProps) {
       </div>
     </nav>
   );
-}
+};
 
 export default withRouter(Nav);

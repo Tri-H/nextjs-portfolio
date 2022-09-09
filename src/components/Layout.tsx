@@ -1,14 +1,14 @@
-import { ReactNode, memo } from 'react'
-import { Header, Footer } from './organisms'
+import { ReactNode, memo, FC } from "react";
+import { Header, Footer } from "./organisms";
 
-function Layout({ children }: { children: ReactNode }) {
-	return (
-		<>
-			<Header />
-			<main>{children}</main>
-			<Footer />
-		</>
-	)
-}
+const Layout: FC<{ children: ReactNode }> = ({ children }) => {
+  return (
+    <>
+      <Header />
+      <main>{children}</main>
+      <Footer />
+    </>
+  );
+};
 
-export default memo(Layout)
+export default memo(Layout);
