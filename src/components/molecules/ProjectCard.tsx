@@ -8,7 +8,7 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="flex h-full w-full flex-col justify-between space-y-4 rounded-lg border bg-white p-4 shadow-lg dark:border-none dark:bg-[#111111]">
+    <div className="flex h-full w-full flex-col justify-between space-y-4 rounded-lg border bg-white p-4 shadow-lg dark:border-zinc-900 dark:bg-black">
       <a
         href={project.url}
         target="_blank"

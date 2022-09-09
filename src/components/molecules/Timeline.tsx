@@ -12,13 +12,13 @@ export default function Timeline({ timeline }: TimelineProps) {
         ({ id, title, description, datetime, location }: TimelineType) => (
           <li
             key={id}
-            className="relative border-l border-zinc-300 pb-6 dark:border-zinc-800"
+            className="relative border-l border-zinc-300 pb-6 dark:border-zinc-900"
           >
             <div
               className={`absolute -left-[6.5px] mt-1.5 h-3 w-3 rounded-full ${
                 datetime.end.toLowerCase() === "present"
                   ? "bg-primary ring-4 ring-primary ring-opacity-25"
-                  : "bg-zinc-300 dark:bg-zinc-800"
+                  : "bg-zinc-300 dark:bg-zinc-900"
               }`}
             ></div>
             <div className="ml-6 space-y-2">

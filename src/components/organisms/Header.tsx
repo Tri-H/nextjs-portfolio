@@ -7,7 +7,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/5 py-4 backdrop-blur-sm dark:bg-dark/5">
+    <header className="sticky top-0 z-50 w-full bg-white/40 py-4 backdrop-blur-md dark:bg-dark/40">
       <div className="container flex items-center justify-between">
         <div className="inline-flex md:w-4/12">
           <ButtonLink href="/">

@@ -25,7 +25,7 @@ function Nav({ router, isMenuOpen, setIsMenuOpen }: NavProps) {
     <nav
       className={`${
         isMenuOpen ? "block" : "hidden md:block"
-      } fixed right-6 top-full w-2/4 rounded-lg border bg-white p-12 dark:border-zinc-800 dark:bg-[#111111] md:static md:w-4/12 md:border-none md:bg-transparent md:p-0 dark:md:border-none dark:md:bg-transparent`}
+      } fixed right-6 top-full w-2/4 rounded-lg border bg-white p-12 dark:border-zinc-900 dark:bg-black md:static md:w-4/12 md:border-none md:bg-transparent md:p-0 dark:md:border-none dark:md:bg-transparent`}
     >
       <ul className="flex flex-col items-center justify-center gap-6 py-2 md:flex-row">
         {links.map(({ href, label }) => (
@@ -47,7 +47,7 @@ function Nav({ router, isMenuOpen, setIsMenuOpen }: NavProps) {
       </ul>
       <div className="mt-4 flex items-center justify-center gap-4 border-t border-dashed border-black pt-4 dark:border-white md:hidden">
         <Accent>Theme</Accent>
-        <ThemeButton className="rounded-xl border p-2 dark:border-zinc-800" />
+        <ThemeButton className="rounded-xl border p-2 dark:border-zinc-900" />
       </div>
     </nav>
   );
