@@ -1,27 +1,37 @@
-import { memo } from 'react'
-import Image from 'next/image'
+import { FC, useState } from "react";
+import Image from "next/image";
 
 type NextImageProps = {
-	src: string
-	alt: string
-	className?: string
-	imgClassName?: string
-}
+  src: string;
+  alt: string;
+  className?: string;
+  imgClassName?: string;
+};
 
-function NextImage({ src, alt, className, imgClassName }: NextImageProps) {
-	return (
-		<figure className={`relative overflow-hidden ${className}`}>
-			<Image
-				src={src}
-				alt={alt}
-				layout="fill"
-				placeholder="empty"
-				blurDataURL={src}
-				priority
-				className={`{isLoading ? 'animate-pulse : ''} h-full w-full object-cover ${imgClassName}`}
-			/>
-		</figure>
-	)
-}
+const NextImage: FC<NextImageProps> = ({
+  src,
+  alt,
+  className,
+  imgClassName,
+}) => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
-export default memo(NextImage)
+  return (
+    <figure className={`relative overflow-hidden ${className}`}>
+      <Image
+        src={src}
+        alt={alt}
+        layout="fill"
+        placeholder="blur"
+        blurDataURL={src}
+        priority
+        className={`h-full w-full object-cover duration-700 ease-in-out ${
+          isLoading ? "blur-xl grayscale" : "blur-0 grayscale-0"
+        } ${imgClassName}`}
+        onLoadingComplete={() => setIsLoading(false)}
+      />
+    </figure>
+  );
+};
+
+export default NextImage;
