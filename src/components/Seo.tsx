@@ -1,14 +1,13 @@
-import { FC } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
 const metaData = {
   title: "Tri Hartanto",
-  siteName: "",
+  siteName: "trih.vercel.app",
   description:
     "An online portfolio by Tri Hartanto. I build an elegant and functional interface for the web.",
-  url: "",
-  image: "/images/large-og.png",
+  url: "https://trih.vercel.app",
+  image: "https://trih.vercel.app/images/og.png",
   type: "website",
 };
 
@@ -16,7 +15,7 @@ type SeoProps = {
   title?: string;
 } & Partial<typeof metaData>;
 
-const Seo: FC<SeoProps> = ({ title }) => {
+const Seo = ({ title }: SeoProps) => {
   const router = useRouter();
 
   const meta = { ...metaData };

@@ -1,5 +1,4 @@
-import { FC } from "react";
-import { Icon } from "../atoms/icons";
+import { Icon } from "@/components/atoms/icons";
 
 type SocialType = {
   id: string;
@@ -10,7 +9,7 @@ type SocialProps = {
   className?: string;
 };
 
-const Social: FC<SocialProps> = ({ className }) => {
+const Social = ({ className }: SocialProps) => {
   const socials: SocialType[] = [
     {
       id: "Github",
@@ -38,7 +37,7 @@ const Social: FC<SocialProps> = ({ className }) => {
             href={href}
             target="_blank"
             rel="noreferrer"
-            className="text-zinc-400 transition-colors hover:text-primary"
+            className="text-neutral-600 transition-colors hover:text-primary dark:text-neutral-300"
           >
             <Icon name={id} />
           </a>

@@ -1,4 +1,3 @@
-export { default as IconLogo } from "./Logo";
 export { default as IconSun } from "./Sun";
 export { default as IconMoon } from "./Moon";
 export { default as IconInstagram } from "./Instagram";

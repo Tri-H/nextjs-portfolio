@@ -1,5 +1,4 @@
 import {
-  IconLogo,
   IconSun,
   IconMoon,
   IconInstagram,
@@ -18,8 +17,6 @@ type IconProps = {
 
 const Icon = ({ name }: IconProps) => {
   switch (name) {
-    case "Logo":
-      return <IconLogo />;
     case "Sun":
       return <IconSun />;
     case "Moon":
@@ -41,7 +38,7 @@ const Icon = ({ name }: IconProps) => {
     case "Tailwind CSS":
       return <IconTailwind />;
     default:
-      return <IconLogo />;
+      return null;
   }
 };
 

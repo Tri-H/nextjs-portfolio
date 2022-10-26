@@ -1,26 +1,32 @@
-import { FC, useState } from "react";
-import { IconLogo } from "../atoms/icons";
-import { ButtonLink } from "../atoms";
-import { Nav, ThemeButton } from "../molecules";
+import { useState } from "react";
+import { Logo } from "@/components/atoms";
+import { ButtonLink } from "@/components/atoms";
+import { Nav, ThemeButton } from "@/components/molecules";
 
-const Header: FC = () => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/40 py-4 backdrop-blur-md dark:bg-dark/40">
+    <header className="sticky top-0 z-50 w-full bg-white/50 py-4 backdrop-blur-md dark:bg-dark/50 md:py-6">
       <div className="container flex items-center justify-between">
-        <div className="inline-flex md:w-4/12">
-          <ButtonLink href="/">
-            <IconLogo size="2.5rem" />
+        <div className="inline-flex md:flex-1">
+          <ButtonLink href="/" className="py-1">
+            <Logo />
           </ButtonLink>
         </div>
-        <Nav isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-        <div className="flex md:w-4/12 md:justify-end">
+        <Nav isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+        <div className="flex md:flex-1 md:justify-end">
           <button
-            className={`md:hidden ${isMenuOpen ? "active" : ""}`}
+            className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <div className="menu-toggle"></div>
+            <div
+              className={`menu-toggle ${
+                isMenuOpen
+                  ? "before:translate-y-1 before:rotate-45 after:-translate-y-1 after:-rotate-45"
+                  : ""
+              }`}
+            />
           </button>
           <ThemeButton className="hidden py-3 md:block" />
         </div>

@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 
 type ButtonProps = {
   children: ReactNode;
@@ -9,17 +9,17 @@ type ButtonProps = {
   title?: string;
 };
 
-const Button: FC<ButtonProps> = ({
+const Button = ({
   children,
   className,
   onClick,
   disabled,
   type,
   title,
-}) => {
+}: ButtonProps) => {
   return (
     <button
-      className={`button ${className}`}
+      className={`py-2 px-3 font-medium ${className}`}
       onClick={onClick}
       disabled={disabled}
       type={type || "button"}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 
 type ButtonLinkProps = {
   children: ReactNode;
@@ -7,7 +7,7 @@ type ButtonLinkProps = {
   className?: string;
 };
 
-const ButtonLink: FC<ButtonLinkProps> = ({ children, href, className }) => {
+const ButtonLink = ({ children, href, className }: ButtonLinkProps) => {
   return (
     <Link href={href}>
       <a className={`font-medium ${className}`}>{children}</a>

@@ -1,25 +1,24 @@
-import { FC } from "react";
 import type { TimelineType } from "data";
-import { Accent } from "../atoms";
+import { Accent } from "@/components/atoms";
 
 type TimelineProps = {
-  timeline: TimelineType[];
+  data: TimelineType[];
 };
 
-const Timeline: FC<TimelineProps> = ({ timeline }) => {
+const Timeline = ({ data }: TimelineProps) => {
   return (
     <ul className="pl-4">
-      {timeline.map(
+      {data.map(
         ({ id, title, description, datetime, location }: TimelineType) => (
           <li
             key={id}
-            className="relative border-l border-zinc-300 pb-6 dark:border-zinc-900"
+            className="relative border-l border-neutral-300 pb-6 dark:border-neutral-800"
           >
             <div
-              className={`absolute -left-[6.5px] mt-1.5 h-3 w-3 rounded-full ${
+              className={`absolute -left-[6.5px] mt-2.5 h-3 w-3 rounded-full ${
                 datetime.end.toLowerCase() === "present"
                   ? "bg-primary ring-4 ring-primary ring-opacity-25"
-                  : "bg-zinc-300 dark:bg-zinc-900"
+                  : "bg-neutral-300"
               }`}
             ></div>
             <div className="ml-6 space-y-2">
@@ -28,7 +27,7 @@ const Timeline: FC<TimelineProps> = ({ timeline }) => {
                 <Accent>{location}</Accent>
               </h4>
               <p>{description}</p>
-              <time>{`${datetime.start} - ${datetime.end}`}</time>
+              <time className="inline-block text-sm">{`${datetime.start} - ${datetime.end}`}</time>
             </div>
           </li>
         )

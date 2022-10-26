@@ -1,5 +1,4 @@
-import { FC } from "react";
-import { ProjectCard } from "../molecules";
+import { ProjectCard } from "@/components/molecules";
 import { projects } from "data";
 import type { ProjectType } from "data";
 
@@ -7,7 +6,7 @@ type ProjectsProps = {
   selectedTag?: string;
 };
 
-const Projects: FC<ProjectsProps> = ({ selectedTag }) => {
+const Projects = ({ selectedTag }: ProjectsProps) => {
   function filteredProjects() {
     if (selectedTag) {
       return projects.filter(({ technologies }) =>

@@ -1,12 +1,11 @@
-import { FC } from "react";
 import { useThemeContext } from "context";
-import { Icon } from "../atoms/icons";
+import { Icon } from "@/components/atoms/icons";
 
 type ThemeButtonProps = {
   className?: string;
 };
 
-const ThemeButton: FC<ThemeButtonProps> = ({ className }) => {
+const ThemeButton = ({ className }: ThemeButtonProps) => {
   const { theme, toggleTheme } = useThemeContext();
 
   return (

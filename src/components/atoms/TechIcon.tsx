@@ -1,11 +1,10 @@
-import { FC } from "react";
 import { Icon } from "./icons";
 
 type TechIconProps = {
   techs: string[];
 };
 
-const TechIcon: FC<TechIconProps> = ({ techs }) => {
+const TechIcon = ({ techs }: TechIconProps) => {
   return (
     <div className="flex flex-wrap gap-2">
       {techs.map((tech) => (

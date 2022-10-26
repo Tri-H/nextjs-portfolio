@@ -1,7 +1,11 @@
-import { ReactNode, memo, FC } from "react";
+import { ReactNode, memo } from "react";
 import { Header, Footer } from "./organisms";
 
-const Layout: FC<{ children: ReactNode }> = ({ children }) => {
+type LayoutProps = {
+  children: ReactNode;
+};
+
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />

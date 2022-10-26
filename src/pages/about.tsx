@@ -31,9 +31,9 @@ const About = () => {
           </div>
         </div>
         <div>
-          <h2 className="uppercase">Timeline</h2>
+          <h2>Timeline</h2>
           <p className="my-4 inline-block">This is my journey</p>
-          <Timeline timeline={timeline} />
+          <Timeline data={timeline} />
         </div>
       </section>
     </>

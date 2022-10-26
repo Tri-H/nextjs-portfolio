@@ -1,3 +1,5 @@
+const plugin = require("tailwindcss/plugin");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -16,5 +18,26 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addComponents }) => {
+      addComponents({
+        ".menu-toggle": {
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.43rem",
+          padding: "0.5rem 0",
+
+          "&::before, &::after": {
+            content: "''",
+            display: "block",
+            height: "1px",
+            width: "1.5rem",
+            backgroundColor: "currentColor",
+            transitionProperty: "transform",
+            transitionDuration: "300ms",
+          },
+        },
+      });
+    }),
+  ],
 };

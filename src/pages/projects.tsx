@@ -6,6 +6,7 @@ import { tags } from "data";
 
 const Project = () => {
   const [selectedTag, setSelectedTag] = useState<string>("");
+
   return (
     <>
       <Seo title="Projects" />

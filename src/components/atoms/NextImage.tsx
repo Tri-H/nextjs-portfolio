@@ -1,4 +1,3 @@
-import { FC, useState } from "react";
 import Image from "next/image";
 
 type NextImageProps = {
@@ -8,14 +7,7 @@ type NextImageProps = {
   imgClassName?: string;
 };
 
-const NextImage: FC<NextImageProps> = ({
-  src,
-  alt,
-  className,
-  imgClassName,
-}) => {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-
+const NextImage = ({ src, alt, className, imgClassName }: NextImageProps) => {
   return (
     <figure className={`relative overflow-hidden ${className}`}>
       <Image
@@ -24,11 +16,9 @@ const NextImage: FC<NextImageProps> = ({
         layout="fill"
         placeholder="blur"
         blurDataURL={src}
+        objectFit="cover"
         priority
-        className={`h-full w-full object-cover duration-700 ease-in-out ${
-          isLoading ? "blur-xl grayscale" : "blur-0 grayscale-0"
-        } ${imgClassName}`}
-        onLoadingComplete={() => setIsLoading(false)}
+        className={`h-full w-full ${imgClassName}`}
       />
     </figure>
   );
